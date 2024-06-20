@@ -7,6 +7,7 @@ body {
   translate: 0 46px;
   font-family: "Euclid Circular A", "Poppins";
   color: rgb(255 255 255 / 50%);
+  overflow: hidden;
 }
 
 body::after {
@@ -22,7 +23,6 @@ body::after {
 
 .frame {
   position: relative;
-  margin: auto;
   display: grid;
   place-items: center;
   scale: 1.35;
@@ -65,7 +65,7 @@ body::after {
 
 .grid {
   display: grid;
-  gap: 0 10px;
+  gap: 0 6px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
@@ -79,7 +79,7 @@ body::after {
   display: grid;
   place-items: center;
   /* width: 70px; */
-  width: 60px;
+  width: 56px;
   height: 108px;
 }
 

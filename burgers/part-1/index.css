@@ -1,0 +1,218 @@
+.button {
+  background: rgb(255 255 255 / 16%);
+  border: 0;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.6;
+  scale: 0.7;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.button:hover {
+  opacity: 1;
+  background: #8f44fd;
+}
+
+.burger {
+  position: relative;
+  width: 32px;
+  border: 0;
+}
+
+.burger,
+.burger::before,
+.burger::after {
+  display: block;
+  border-radius: 2px;
+  height: 2px;
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.burger::before {
+  top: -8px;
+}
+
+.burger::after {
+  top: 8px;
+}
+
+/* burger-1 */
+
+.burger.burger-1,
+.burger.burger-1::before,
+.burger.burger-1::after {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.burger.burger-1.is-closed {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.burger.burger-1.is-closed::before {
+  transform: rotate(-45deg) translate(30px, 40px);
+}
+
+.burger.burger-1.is-closed::after {
+  transform: rotate(45deg) translate(30px, -42px);
+}
+
+/* burger-2 */
+
+.burger.burger-2,
+.burger.burger-2::before,
+.burger.burger-2::after {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.burger.burger-2::before,
+.burger.burger-2::after {
+  width: 16px;
+}
+
+.burger.burger-2::before {
+  left: 0;
+  transform-origin: 100% 0%;
+}
+
+.burger.burger-2::after {
+  left: 16px;
+  transform-origin: 0% 100%;
+}
+
+.burger.burger-2.is-closed {
+  transform: rotate(-45deg);
+}
+
+.burger.burger-2.is-closed::before {
+  transform: rotate(90deg) translate(10px, -1px);
+}
+
+.burger.burger-2.is-closed::after {
+  transform: rotate(90deg) translate(-9px, 1px);
+  width: 16px;
+}
+
+/* burger-3  */
+
+.burger.burger-3::before,
+.burger.burger-3::after {
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+
+.burger.burger-3.is-closed::before,
+.burger.burger-3.is-closed::after {
+  width: 20px;
+}
+
+.burger.burger-3.is-closed::before {
+  transform: rotate(-45deg) translate(-4px, -2px);
+}
+
+.burger.burger-3.is-closed::after {
+  transform: rotate(45deg) translate(-4px, 2px);
+}
+
+/* burger-4 */
+
+.burger.burger-4::before,
+.burger.burger-4::after {
+  transition-timing-function: linear;
+  transition-duration: 0.1s;
+}
+
+.burger.burger-4.is-closed {
+  transform: rotate(360deg);
+  background: transparent;
+}
+
+.burger.burger-4.is-closed::before {
+  transform: rotate(-45deg) translate(-6px, 5px);
+}
+
+.burger.burger-4.is-closed::after {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* burger-5 */
+
+.burger.burger-5 {
+  transition: none;
+  height: 0;
+}
+
+.burger.burger-5::before,
+.burger.burger-5::after {
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+}
+
+.burger.burger-5::before {
+  top: -4px;
+}
+
+.burger.burger-5::after {
+  top: 3px;
+}
+
+.burger.burger-5.is-closed::before {
+  transform: rotate(-45deg) translate(-3px, 2px);
+}
+
+.burger.burger-5.is-closed::after {
+  transform: rotate(45deg) translate(-2px, -3px);
+}
+
+/* burger-6 */
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform: scaleY(0.8) scaleX(1.2);
+}
+
+.burger-6.is-closed.hamRotate {
+  transform: rotate(45deg) scale(1.2);
+}
+
+.line {
+  fill: none;
+  transition: 0.4s;
+  stroke: #f9f9f9;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.burger-6.is-closed.ham1 .top {
+  stroke-dashoffset: -98px;
+}
+.burger-6.is-closed.ham1 .bottom {
+  stroke-dashoffset: -138px;
+}
