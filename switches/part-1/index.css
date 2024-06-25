@@ -1,0 +1,321 @@
+/* The switch - the box around the slider */
+.switch-1 {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  scale: 0.7;
+}
+
+/* Hide default HTML checkbox */
+.switch-1 input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.switch-1 .slider {
+  --background: #313032;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+
+.switch-1 .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #aeaaae;
+  background: var(--background);
+  transition: 0.5s;
+}
+
+.switch-1 input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #8f44fd;
+}
+
+.switch-2 {
+  --secondary-container: #313032;
+  --primary: #8f44fd;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.7em;
+  height: 1.8em;
+  scale: 0.75;
+}
+
+.switch-2 input {
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-2 .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #313033;
+  transition: 0.2s;
+  border-radius: 30px;
+}
+
+.switch-2 .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: #aeaaae;
+  transition: 0.4s;
+}
+
+.switch-2 input:checked + .slider::before {
+  background-color: var(--primary);
+}
+
+.switch-2 input:checked + .slider {
+  background-color: rgb(143 68 253 / 30%);
+}
+
+.switch-2 input:focus + .slider {
+  box-shadow: 0 0 1px var(--secondary-container);
+}
+
+.switch-2 input:checked + .slider:before {
+  transform: translateX(1.9em);
+}
+
+.switch-3 {
+  --dark-sky: #313032;
+  --moon: #aeaaae;
+  --light-sky: #8f44fd;
+  --sun: #f7f7f7;
+  display: inline-block;
+  position: relative;
+  border-radius: 5em;
+  cursor: pointer;
+  width: 60px;
+  height: 32px;
+  overflow: hidden;
+  scale: 0.7;
+  transition: all 0.5s;
+}
+
+.switch-3 .back {
+  background-color: var(--dark-sky);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.switch-3 .checkbox {
+  opacity: 0;
+}
+
+.switch-3 .checkbox:checked ~ .back {
+  background-color: var(--light-sky);
+}
+
+.switch-3 .checkbox:checked ~ .moon {
+  transform: translateX(24px) rotate(180deg);
+  opacity: 0;
+}
+
+.switch-3 .checkbox:checked ~ .sun {
+  transform: translateX(24px) rotate(180deg);
+  opacity: 1;
+}
+
+.switch-3 .moon {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  height: 24px;
+  fill: var(--moon);
+  transition: 0.5s;
+}
+
+.switch-3 .sun {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  height: 24px;
+  fill: var(--sun);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.switch-5 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+
+.switch-5 .toggle {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+.switch-5 .toggle:before {
+  content: "";
+  position: relative;
+  top: 3px;
+  left: 3px;
+  width: 34px;
+  height: 14px;
+  display: block;
+  background: #41393f;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+.switch-5 .toggle span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: #aeaaae;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.switch-5 .toggle span:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: -18px;
+  width: 56px;
+  height: 56px;
+  background: #8f44fd;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.switch-5 #cbx:checked + .toggle:before {
+  background: rgb(143 68 253 / 40%);
+}
+.switch-5 #cbx:checked + .toggle span {
+  background: #8f44fd;
+  transform: translateX(20px);
+  transition: all 0.3s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+  box-shadow: 0 3px 8px rgb(143 68 253 / 30$);
+}
+.switch-5 #cbx:checked + .toggle span:before {
+  transform: scale(1);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.switch-4 {
+  display: inline-block;
+  scale: 0.7;
+}
+
+.switch-4 input {
+  display: none;
+}
+
+.switch-4 label {
+  display: block;
+  width: 50px;
+  height: 20px;
+  padding: 3px;
+  border-radius: 15px;
+  border: 2px solid #4d4b4e;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.switch-4 label::after {
+  content: "";
+  display: inherit;
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  background: #4d4b4e;
+  transition: 0.3s;
+}
+
+.switch-4 input:checked ~ label {
+  border-color: #8f44fd;
+}
+
+.switch-4 input:checked ~ label::after {
+  translate: 30px 0;
+  background: #8f44fd;
+}
+
+.switch-4 input:disabled ~ label {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* To hide the checkbox */
+#checkboxInput {
+  display: none;
+}
+
+.toggleSwitch {
+  scale: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: centerå;
+  position: relative;
+  width: 50px;
+  height: 17px;
+  background-color: rgb(82, 82, 82);
+  border-radius: 20px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.toggleSwitch::after {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 0px;
+  background-color: #141315;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+  border: 2px solid #4d4b4e;
+}
+
+#checkboxInput:checked + .toggleSwitch::after {
+  transform: translateX(100%);
+  transition-duration: 0.3s;
+  border: 2px solid #8f44fd;
+}
+/* Switch background change */
+#checkboxInput:checked + .toggleSwitch {
+  background-color: #8f44fd;
+  transition-duration: 0.3s;
+}
