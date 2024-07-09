@@ -1,0 +1,419 @@
+.button {
+  background: rgb(255 255 255 / 16%);
+  border: 0;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.6;
+  scale: 0.7;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.175s;
+}
+
+.button:hover {
+  opacity: 1;
+  background: #8f44fd;
+}
+
+/* burger-1 */
+
+.burger-1 {
+  scale: 0.75;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.3s;
+}
+
+.burger-1 .bars {
+  width: 100%;
+  height: 4px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.burger-1 #bar2 {
+  transition-duration: 0.6s;
+}
+
+.burger-1 #bar1,
+.burger-1 #bar3 {
+  width: 70%;
+}
+
+.is-closed.burger-1 .bars {
+  position: absolute;
+  transition-duration: 0.3s;
+}
+
+.is-closed.burger-1 #bar2 {
+  transform: scaleX(0);
+  transition-duration: 0.3s;
+}
+
+.is-closed.burger-1 #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: 0.3s;
+}
+
+.is-closed.burger-1 #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: 0.3s;
+}
+
+.is-closed.burger-1 {
+  transition-duration: 0.3s;
+  transform: rotate(180deg);
+}
+
+/* burger-2 */
+
+.burger-2 {
+  scale: 1.2;
+  --gap: 5px;
+  --height-bar: 2px;
+  --pos-y-bar-one: 0;
+  --pos-y-bar-three: 0;
+  --scale-bar: 1;
+  --rotate-bar-one: 0;
+  --rotate-bar-three: 0;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  cursor: pointer;
+  position: relative;
+}
+
+.burger-2 .bar {
+  position: relative;
+  height: var(--height-bar);
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+.burger-2 .bar--1 {
+  top: var(--pos-y-bar-one);
+  transform: rotate(var(--rotate-bar-one));
+  transition: top 200ms 100ms, transform 100ms;
+}
+
+.burger-2 .bar--2 {
+  transform: scaleX(var(--scale-bar));
+  transition: transform 150ms 100ms;
+}
+
+.burger-2 .bar--3 {
+  bottom: var(--pos-y-bar-three);
+  transform: rotate(var(--rotate-bar-three));
+  transition: bottom 200ms 100ms, transform 100ms;
+}
+
+.is-closed.burger-2 > .bar--1 {
+  transition: top 200ms, transform 200ms 100ms;
+}
+
+.is-closed.burger-2 .bar--3 {
+  transition: bottom 200ms, transform 200ms 100ms;
+}
+
+.is-closed.burger-2 {
+  --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+  --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+  --scale-bar: 0;
+  --rotate-bar-one: 45deg;
+  --rotate-bar-three: -45deg;
+}
+
+/* burger-3 */
+
+.burger-3 {
+  width: 32px;
+  height: 18px;
+}
+
+.burger-3 span {
+  display: block;
+  width: 100%;
+  height: 0.125rem;
+  border-radius: 2px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.burger-3 span + span {
+  margin-top: 0.375rem;
+}
+
+.burger-3 span:nth-child(1) {
+  animation: ease 0.4s menu-icon-top-2 forwards;
+}
+
+.burger-3 span:nth-child(2) {
+  animation: ease 0.4s menu-icon-scaled-2 forwards;
+}
+
+.burger-3 span:nth-child(3) {
+  animation: ease 0.4s menu-icon-bottom-2 forwards;
+}
+
+.is-closed.burger-3 span:nth-child(1) {
+  animation: ease 0.4s menu-icon-top forwards;
+}
+
+.is-closed.burger-3 span:nth-child(2) {
+  animation: ease 0.4s menu-icon-scaled forwards;
+}
+
+.is-closed.burger-3 span:nth-child(3) {
+  animation: ease 0.4s menu-icon-bottom forwards;
+}
+
+@keyframes menu-icon-top {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    top: 0.5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: 0.5rem;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes menu-icon-top-2 {
+  0% {
+    top: 0.5rem;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    top: 0.5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes menu-icon-bottom {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+
+  50% {
+    bottom: 0.5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: 0.5rem;
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes menu-icon-bottom-2 {
+  0% {
+    bottom: 0.5rem;
+    transform: rotate(135deg);
+  }
+
+  50% {
+    bottom: 0.5rem;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes menu-icon-scaled {
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes menu-icon-scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* burger-4 */
+
+.burger-4 {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 32px;
+  width: 32px;
+}
+
+.burger-4 span {
+  width: 32px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.burger-4 span:nth-child(1) {
+  top: 20%;
+}
+
+.burger-4 span:nth-child(2) {
+  top: 50%;
+}
+
+.burger-4 span:nth-child(3) {
+  top: 80%;
+}
+
+.is-closed.burger-4 span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -moz-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  -o-transform: translateY(-50%) rotate(45deg);
+}
+
+.is-closed.burger-4 span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -moz-transform: translateY(-50%) rotate(-45deg);
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  -o-transform: translateY(-50%) rotate(-45deg);
+}
+
+.is-closed.burger-4 span:nth-child(3) {
+  transform: translateX(-50px);
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+  opacity: 0;
+}
+
+/* burger-5 */
+
+.burger-5 {
+  scale: 1.3;
+  height: 34px;
+}
+
+.burger-5 svg {
+  /* The size of the SVG defines the overall size */
+  height: 36px;
+  transform: translate(-1px, -1px);
+  /* Define the transition for transforming the SVG */
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-5 .line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burger-5 .line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.is-closed.burger-5 svg {
+  transform: rotate(-45deg) translate(0);
+}
+
+.is-closed.burger-5 svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* burger-6 */
+
+.burger-6 {
+  scale: 0.65;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: 0.3s;
+}
+
+.burger-6 .bars {
+  width: 100%;
+  height: 4px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+
+.is-closed.burger-6 #bar2 {
+  transform: translateY(14px) rotate(60deg);
+  margin-left: 0;
+  transform-origin: right;
+  transition-duration: 0.3s;
+  z-index: 2;
+}
+
+.is-closed.burger-6 #bar1 {
+  transform: translateY(28px) rotate(-60deg);
+  transition-duration: 0.3s;
+  transform-origin: left;
+  z-index: 1;
+}
+
+.is-closed.burger-6 {
+  transform: rotate(-90deg);
+}
