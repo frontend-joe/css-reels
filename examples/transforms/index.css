@@ -1,0 +1,50 @@
+.grid > div.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dotted rgb(255 255 255 / 10%);
+  transition: 0.3s;
+}
+
+.grid > div.row:hover {
+  border-bottom-color: rgb(255 255 255 / 25%);
+}
+
+.row:hover .code {
+  color: rgb(255 255 255 / 95%);
+}
+
+.code {
+  color: rgb(255 255 255 / 50%);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  transition: 0.3s;
+}
+
+.square {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #8f44fd;
+  transition: 0.3s;
+}
+
+.row:hover .rotate {
+  rotate: 15deg;
+}
+
+.row:hover .scale {
+  scale: 0.7;
+}
+
+.row:hover .translate {
+  translate: -6px -4px;
+}
+
+.row:hover .skew {
+  transform: skew(-5deg, -10deg);
+}
+
+.row:hover .matrix > div {
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}

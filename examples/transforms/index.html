@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform Property</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="frame rows">
+      <header>
+        <h2>LETS LEARN</h2>
+        <h1 style="font-size: 18px">CSS Transforms</h1>
+      </header>
+      <div class="grid rows">
+        <div class="row">
+          <div class="code">rotate: 15deg;</div>
+          <div class="square rotate"></div>
+        </div>
+        <div class="row">
+          <div class="code">scale: 0.7;</div>
+          <div class="square scale"></div>
+        </div>
+        <div class="row">
+          <div class="code">translate: -6px -4px;</div>
+          <div class="square translate"></div>
+        </div>
+        <div class="row">
+          <div class="code">
+            <!-- transform: <br />&nbsp;&nbsp;skew(-5deg,-10deg); -->
+            transform: skew(-5deg,-10deg);
+          </div>
+          <div class="square skew"></div>
+        </div>
+        <div class="row">
+          <div class="code">
+            <!-- transform: <br />&nbsp;&nbsp;matrix(0, 1, 1, 0, 0, 0); -->
+            transform: matrix(0,1,1,0,0,0);
+          </div>
+          <div class="matrix">
+            <div class="square"></div>
+          </div>
+        </div>
+      </div>
+      <h3>@frontendjoe</h3>
+    </div>
+  </body>
+</html>
