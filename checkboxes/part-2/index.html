@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkboxes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <header>
+        <h2>Save These</h2>
+        <h1 style="font-size: 17px">CSS Checkboxes</h1>
+      </header>
+      <div class="grid">
+        <div>
+          <p>1</p>
+          <div class="checkbox-wrapper-12">
+            <div class="cbx">
+              <input id="cbx-12" type="checkbox" />
+              <label for="cbx-12"></label>
+              <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
+                <path d="M2 8.36364L6.23077 12L13 2"></path>
+              </svg>
+            </div>
+            <!-- Gooey-->
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <filter id="goo-12">
+                  <fegaussianblur
+                    in="SourceGraphic"
+                    stddeviation="4"
+                    result="blur"
+                  ></fegaussianblur>
+                  <fecolormatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7"
+                    result="goo-12"
+                  ></fecolormatrix>
+                  <feblend in="SourceGraphic" in2="goo-12"></feblend>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <p>2</p>
+          <div class="checkbox-wrapper-15">
+            <input
+              class="inp-cbx"
+              id="cbx-15"
+              type="checkbox"
+              style="display: none"
+            />
+            <label class="cbx" for="cbx-15">
+              <span>
+                <svg width="12px" height="9px" viewbox="0 0 12 9">
+                  <polyline points="1 5 4 8 11 1"></polyline>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div>
+          <p>3</p>
+          <div class="checkbox-wrapper-31">
+            <input type="checkbox" />
+            <svg viewBox="0 0 35.6 35.6">
+              <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+              <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+              <polyline
+                class="check"
+                points="11.78 18.12 15.55 22.23 25.17 12.87"
+              ></polyline>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <p>4</p>
+          <label class="container">
+            <input type="checkbox" checked="checked" />
+            <div class="checkmark"></div>
+            <svg
+              width="50"
+              height="50"
+              xmlns="http://www.w3.org/2000/svg"
+              class="celebrate"
+            >
+              <polygon points="0,0 10,10"></polygon>
+              <polygon points="0,25 10,25"></polygon>
+              <polygon points="0,50 10,40"></polygon>
+              <polygon points="50,0 40,10"></polygon>
+              <polygon points="50,25 40,25"></polygon>
+              <polygon points="50,50 40,40"></polygon>
+            </svg>
+          </label>
+        </div>
+        <div>
+          <p>5</p>
+          <div class="checkbox-wrapper-42">
+            <input id="cbx-42" type="checkbox" />
+            <label class="cbx" for="cbx-42"></label>
+          </div>
+        </div>
+        <div>
+          <p>6</p>
+          <div class="checkbox-wrapper-44">
+            <label class="toggleButton">
+              <input type="checkbox" />
+              <div>
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758"
+                  ></path>
+                </svg>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <h3>Code in comments ⬇️</h3>
+    </div>
+  </body>
+</html>
