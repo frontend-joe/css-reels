@@ -4,29 +4,18 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
-  translate: 0 46px;
   font-family: "Euclid Circular A", "Poppins";
   color: rgb(255 255 255 / 50%);
   overflow: hidden;
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  top: 50;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: rgb(255 255 255 / 50%);
-  opacity: 0;
 }
 
 .frame {
   position: relative;
   display: grid;
   place-items: center;
-  scale: 1.35;
-  translate: 0 -6px;
+  scale: 1.45;
+  translate: 0 24px;
+  user-select: none;
 }
 
 .frame header {
@@ -63,6 +52,10 @@ body::after {
   cursor: default;
 }
 
+.frame.rows h3 {
+  bottom: -60px;
+}
+
 .grid {
   display: grid;
   gap: 0 6px;
@@ -72,6 +65,18 @@ body::after {
 
 .grid.two-col {
   grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.grid.rows {
+  grid-template-columns: 196px;
+  gap: 0;
+  place-items: center;
+}
+
+.grid.rows > div {
+  height: 40px;
+  width: 100%;
 }
 
 .grid > div {
@@ -79,7 +84,7 @@ body::after {
   display: grid;
   place-items: center;
   /* width: 70px; */
-  width: 56px;
+  width: 51px;
   height: 108px;
 }
 
@@ -96,11 +101,12 @@ body::after {
 }
 
 .grid.grid.two-col > div {
-  width: 110px;
+  width: 96px;
 }
 
 .grid > div > p {
   position: absolute;
+  z-index: 0;
   top: -6px;
   left: 50%;
   translate: -50% 0;
