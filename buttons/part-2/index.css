@@ -1,0 +1,471 @@
+.grid > div {
+  height: 78px;
+}
+
+.frame {
+  translate: 0 10px;
+}
+
+.frame header {
+  top: -60px;
+}
+
+.frame h3 {
+  bottom: -24px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* btn-1 */
+
+.btn-1 {
+  scale: 0.5;
+  display: block;
+  cursor: pointer;
+  color: white;
+  margin: 0 auto;
+  width: 140px;
+  white-space: nowrap;
+  position: absolute;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 3px;
+  isolation: isolate;
+}
+
+.btn-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(
+    115deg,
+    #4fcf70,
+    #fad648,
+    #a767e5,
+    #12bcfe,
+    #44ce7b
+  );
+  background-size: 25% 100%;
+  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop
+    0.75s linear infinite;
+  animation-play-state: paused;
+  translate: -5% 0%;
+  transition: translate 0.25s ease-out, opacity 0.175s ease-out;
+}
+
+.btn-1:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+  transition-duration: 0.75s;
+  translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.btn-1 span {
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 18px;
+  background: #000;
+  border-radius: 30px;
+  height: 100%;
+  text-align: center;
+}
+
+/* btn-2 */
+
+.btn-2 {
+  scale: 0.5;
+  position: absolute;
+  font-family: inherit;
+  font-size: 18px;
+  background: #000;
+  color: white;
+  padding: 15px 24px 15px 24px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-2 span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-2 svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-2:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btn-2:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.btn-2:hover span {
+  transform: translateX(5em);
+}
+
+.btn-2:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* btn-3 */
+
+.btn-3 {
+  scale: 0.5;
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid #18181a;
+  color: #18181a;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 15px;
+  padding: 19px 18px 19px;
+  width: 140px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 30px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-3 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.btn-3 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.btn-3:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #8f44fd;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.btn-3:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.btn-3:hover span:last-child {
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+/* btn-4 */
+
+.btn-4 {
+  scale: 0.55;
+  position: absolute;
+  margin: auto;
+  padding: 13px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  white-space: nowrap;
+  background: none;
+  cursor: pointer;
+}
+
+.btn-4:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #8f44fd;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-4 span {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f9f9f9;
+}
+
+.btn-4 svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #f9f9f9;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.btn-4:hover:before {
+  width: 100%;
+  background: #8f44fd;
+}
+
+.btn-4:hover svg {
+  transform: translateX(0);
+}
+
+.btn-4:active {
+  transform: scale(0.95);
+}
+
+/* btn-5 */
+
+.btn-5 {
+  scale: 0.5;
+  position: absolute;
+  overflow: hidden;
+  width: 140px;
+  height: 56px;
+  border-radius: 30px;
+  border: 0;
+  color: #f7f7f7;
+  background: #8f44fd;
+  font-family: "Euclid Circular A", "Poppins";
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-5 i {
+  font-size: 18px;
+}
+
+.btn-5-text,
+.btn-5-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.btn-5-text {
+  gap: 10px;
+  justify-content: center;
+  color: inherit;
+  font-size: 18px;
+}
+
+.btn-5-links {
+  opacity: 0;
+  justify-content: space-between;
+  padding: 0 24px;
+  transition: 0.2s;
+}
+
+.btn-5-links a {
+  translate: 0 50px;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.btn-5:hover {
+  border-radius: 10px;
+}
+
+.btn-5:hover .btn-5-links a:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.btn-5:hover .btn-5-links a:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-5:hover .btn-5-links a:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.btn-5:hover .btn-5-text {
+  translate: 0 -100%;
+}
+
+.btn-5:hover .btn-5-links {
+  opacity: 1;
+}
+
+.btn-5:hover .btn-5-links a {
+  translate: 0;
+}
+
+.btn-5-links i {
+  color: #f7f7f7;
+}
+
+/* btn-6 */
+
+.btn-6 {
+  position: absolute;
+  scale: 0.5;
+  display: flex;
+  justify-content: center;
+  --color-text: #ffffff;
+  --color-background: #8f44fd;
+  --color-outline: #ff145b80;
+  --color-shadow: #00000080;
+}
+
+.btn-6 .btn-content {
+  display: flex;
+  align-items: center;
+  padding: 4px 20px 4px 28px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-text);
+  background: black;
+  transition: 1s;
+  border-radius: 100px;
+  box-shadow: 0 0 0.2em 0 var(--color-background);
+}
+
+.btn-6 .btn-content:hover,
+.btn-content:focus {
+  transition: 0.5s;
+  -webkit-animation: btn-content 1s;
+  animation: btn-content 1s;
+  outline: 0.1em solid transparent;
+  outline-offset: 0.2em;
+  box-shadow: 0 0 0.4em 0 var(--color-background);
+}
+
+.btn-6 .btn-content .icon-arrow {
+  transition: 0.5s;
+  margin-right: 0px;
+  transform: scale(0.6);
+}
+
+.btn-6 .btn-content:hover .icon-arrow {
+  transition: 0.5s;
+  margin-right: 25px;
+}
+
+.btn-6 .icon-arrow {
+  width: 20px;
+  margin-left: 15px;
+  position: relative;
+  top: 2px;
+  scale: 0.8;
+}
+
+/* SVG */
+.btn-6 #arrow-icon-one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.btn-6 #arrow-icon-two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.btn-6 .btn-content:hover #arrow-icon-three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.btn-6 .btn-content:hover #arrow-icon-one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.btn-6 .btn-content:hover #arrow-icon-two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: var(--color-background);
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+/* Button animations */
+@-webkit-keyframes btn-content {
+  0% {
+    outline: 0.2em solid var(--color-background);
+    outline-offset: 0;
+  }
+}
+
+@keyframes btn-content {
+  0% {
+    outline: 0.2em solid var(--color-background);
+    outline-offset: 0;
+  }
+}
