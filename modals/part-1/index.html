@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="modal-container">
+      <div class="modal-background">
+        <div class="modal">
+          <h2>I'm a Modal</h2>
+          <p>Hear me roar.</p>
+          <svg
+            class="modal-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="none"
+          >
+            <rect
+              x="0"
+              y="0"
+              fill="none"
+              width="226"
+              height="162"
+              rx="3"
+              ry="3"
+            ></rect>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="frame">
+      <header>
+        <h2>Save These</h2>
+        <h1 style="font-size: 19px">CSS Modals</h1>
+      </header>
+      <div class="grid two-col buttons">
+        <div>
+          <p>1</p>
+          <button type="button" onclick="handleClick('one')">Unfolding</button>
+        </div>
+        <div>
+          <p>2</p>
+          <button type="button" onclick="handleClick('two')">Revealing</button>
+        </div>
+        <div>
+          <p>3</p>
+          <button type="button" onclick="handleClick('six')">Sketch</button>
+        </div>
+        <div>
+          <p>4</p>
+          <button type="button" onclick="handleClick('side')">Side</button>
+        </div>
+        <div>
+          <p>5</p>
+          <button type="button" onclick="handleClick('five')">Speedy</button>
+        </div>
+        <div>
+          <p>6</p>
+          <button type="button" onclick="handleClick('seven')">Bond</button>
+        </div>
+      </div>
+      <h3>Code in comments ⬇️</h3>
+    </div>
+
+    <script type="text/javascript">
+      const modal = document.querySelector("#modal-container");
+
+      const handleClick = (buttonId) => {
+        modal.classList = [];
+        modal.classList.add(buttonId);
+        document.body.classList.add("modal-active");
+      };
+
+      modal.addEventListener("click", () => {
+        modal.classList.add("out");
+        document.body.classList.remove("modal-active");
+      });
+    </script>
+  </body>
+</html>
