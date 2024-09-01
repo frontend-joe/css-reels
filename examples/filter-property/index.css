@@ -1,0 +1,79 @@
+.frame {
+  translate: 0 6px;
+}
+
+.frame header {
+  top: -46px;
+}
+
+.frame.rows h3 {
+  bottom: -26px;
+}
+
+.wrapper {
+  display: grid;
+  position: relative;
+  padding-top: 82px;
+  width: 160px;
+  gap: 5px;
+}
+
+.wrapper img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+  transition: filter 0.4s;
+}
+
+.wrapper .image-wrapper {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  translate: -50% 0;
+  right: 0;
+  width: 160px;
+  height: 82px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.wrapper div {
+  padding: 5px 16px;
+  border-radius: 4px;
+  color: rgb(255 255 255 / 96%);
+  font-size: 9.25px;
+  text-align: center;
+  background: rgb(255 255 255 / 11%);
+  opacity: 0.65;
+  transition: 0.5s;
+}
+
+.wrapper div:hover {
+  opacity: 1;
+  background: rgb(255 255 255 / 14%);
+}
+
+.greyscale:hover ~ .image-wrapper img {
+  filter: grayscale(0.75);
+}
+
+.brightness:hover ~ .image-wrapper img {
+  filter: brightness(1.25);
+}
+
+.blur:hover ~ .image-wrapper img {
+  filter: blur(4px);
+}
+
+.sepia:hover ~ .image-wrapper img {
+  filter: sepia(0.5);
+}
+
+.hue-rotate:hover ~ .image-wrapper img {
+  filter: hue-rotate(90deg);
+}
+
+.saturate:hover ~ .image-wrapper img {
+  filter: saturate(3);
+}
