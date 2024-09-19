@@ -1,0 +1,234 @@
+.grid.grid.two-col > div {
+  height: 72px;
+  width: 88px;
+}
+
+.frame {
+  translate: 0 10px;
+}
+
+.frame header {
+  top: -60px;
+}
+
+.frame h3 {
+  bottom: -24px;
+}
+
+button {
+  font-family: inherit;
+  border: 0;
+  font-size: 10px;
+  padding: 8px 0;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 70px;
+  background: rgba(0 0 0 / 40%);
+  color: #f9f9f9;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: rgba(0 0 0 / 100%);
+}
+
+body {
+  background-color: #333037;
+}
+
+html.menu-active,
+body.menu-active {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  background: rgba(0 0 0 / 20%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+body.menu-active .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+#menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f9f9f9;
+  background: rgba(0 0 0 / 90%);
+  transition-property: translate, opacity, visibility;
+  transition-duration: 0.3s;
+}
+
+body.menu-active #menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.links {
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: grid;
+  place-items: center;
+  transition: 0.175s;
+}
+
+body.menu-active .links {
+  opacity: 1;
+  visibility: visible;
+}
+
+.links li a {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  color: #f9f9f9;
+}
+
+body.menu-active .links li {
+  opacity: 1;
+  animation: appear 0.5s both;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* menu-1 */
+
+#menu.one {
+  translate: -100% 0;
+}
+
+body.menu-active #menu.one {
+  translate: 0;
+}
+
+/* menu-2 */
+
+#menu.two {
+  overflow: hidden;
+  transform-origin: 50% 50%;
+}
+
+body.menu-active #menu.two {
+  animation: menu-2-appear 0.3s;
+}
+
+@keyframes menu-2-appear {
+  0% {
+    translate: 0;
+    scale: 0;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    scale: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* menu-4 */
+
+#menu.four {
+  transform: skew(-15deg) scale(1.6);
+}
+
+body.menu-active #menu.four {
+  animation: menu-4-appear 0.5s forwards;
+}
+
+@keyframes menu-4-appear {
+  0% {
+    translate: -200% 0;
+  }
+  100% {
+    translate: 0;
+  }
+}
+
+/* menu-5 */
+
+#menu.five {
+  clip-path: ellipse(60% 60% at 0% 50%);
+  transition: translate 0.475s cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+body.menu-active #menu.five {
+  animation: menu-5-appear 0.25s forwards;
+}
+
+@keyframes menu-5-appear {
+  0% {
+    clip-path: ellipse(60% 60% at 0% 50%);
+  }
+  100% {
+    clip-path: ellipse(120% 120% at 0% 50%);
+  }
+}
+
+/* menu-6 */
+
+#menu.six {
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  bottom: auto;
+  right: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  scale: 20;
+}
+
+body.menu-active #menu.six {
+  animation: menu-6-appear 0.5s both;
+}
+
+@keyframes menu-6-appear {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 20;
+  }
+}
