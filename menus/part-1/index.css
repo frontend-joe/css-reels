@@ -109,6 +109,15 @@ body.menu-active .links {
   align-items: center;
   height: 56px;
   color: #f9f9f9;
+  transition: 0.3s;
+}
+
+.links:hover a {
+  opacity: 0.5;
+}
+
+.links a:hover {
+  opacity: 1;
 }
 
 body.menu-active .links li {
