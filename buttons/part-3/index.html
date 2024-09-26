@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <header>
+        <h2>Save These</h2>
+        <h1 style="font-size: 19px">CSS Buttons</h1>
+      </header>
+      <div class="grid two-col">
+        <div>
+          <p>1</p>
+          <button class="btn-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="arr-2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+              ></path>
+            </svg>
+            <span class="text">Explore</span>
+            <span class="circle"></span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="arr-1"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <p>2</p>
+          <button class="btn-2">
+            <span class="btn-2-bg">
+              <span class="btn-2-bg-layers">
+                <span class="btn-2-bg-layer btn-2-bg-layer-1 -purple"></span>
+                <span class="btn-2-bg-layer btn-2-bg-layer-2 -turquoise"></span>
+                <span class="btn-2-bg-layer btn-2-bg-layer-3 -yellow"></span>
+              </span>
+            </span>
+            <span class="btn-2-inner">
+              <span class="btn-2-inner-static">Register</span>
+              <span class="btn-2-inner-hover">Register</span>
+            </span>
+          </button>
+        </div>
+        <div>
+          <p>3</p>
+          <div class="btn-3-wrapper">
+            <button class="btn-3">
+              <svg
+                class="mysvg"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                height="24px"
+                width="24px"
+              >
+                <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                <g
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  id="SVGRepo_tracerCarrier"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Interface / Download">
+                    <path
+                      stroke-linejoin="round"
+                      stroke-linecap="round"
+                      stroke-width="2"
+                      stroke="#f1f1f1"
+                      d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
+                      id="Vector"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              <span class="texto">Download</span>
+            </button>
+          </div>
+        </div>
+        <div>
+          <p>4</p>
+          <button class="btn-4">
+            <span>Upload</span>
+          </button>
+        </div>
+        <div>
+          <p>5</p>
+          <button class="btn-5" onclick="deploy(this)">
+            <span class="icon-wrapper">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 668 667"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M334 0C150 0 0.666748 149.333 0.666748 333.333C0.666748 517.333 150 666.667 334 666.667C518 666.667 667.333 517.333 667.333 333.333C667.333 149.333 518 0 334 0ZM154 307.667C159.667 268 177.333 232.333 205 204.333C271.667 138 376.667 134.333 448 192.333V160.667C448 147 459.333 135.667 473 135.667C486.667 135.667 498 147 498 160.667V249.667C498 263.333 486.667 274.667 473 274.667H384C370.333 274.667 359 263.333 359 249.667C359 236 370.333 224.667 384 224.667H409C357.333 188.667 286 193.667 240 239.667C220 259.667 207.333 285.667 203 314.667C201.333 327 190.667 336 178.333 336C177 336 176 336 174.667 335.667C161.667 334 152 321.333 154 307.667ZM463 462.333C427.333 498 380.667 515.667 334 515.667C293.333 515.667 253 501.333 219.667 474.333V505.667C219.667 519.333 208.333 530.667 194.667 530.667C181 530.667 169.667 519.333 169.667 505.667V416.667C169.667 403 181 391.667 194.667 391.667H283.667C297.333 391.667 308.667 403 308.667 416.667C308.667 430.333 297.333 441.667 283.667 441.667H258.667C310.333 477.667 381.667 472.667 427.667 426.667C447.667 406.667 460.333 380.667 464.667 351.667C466.667 338 479 328.333 493 330.333C506.667 332.333 516 345 514.333 358.667C508.333 399 490.667 434.667 463 462.333Z"
+                  fill="#F9F9F9"
+                />
+              </svg>
+            </span>
+            <span class="button-text">Reload</span>
+          </button>
+          <script type="text/javascript">
+            const deploy = (button) => {
+              button.classList.add("loading");
+              setTimeout(() => {
+                button.classList.remove("loading");
+              }, 4500);
+            };
+          </script>
+        </div>
+        <div>
+          <p>6</p>
+          <button class="btn-6">
+            <span class="button-text"></span>
+            <span class="animation">
+              <span class="paper-wrapper">
+                <span class="paper"></span>
+              </span>
+              <span class="shredded-wrapper">
+                <span class="shredded"></span>
+              </span>
+              <span class="lid"></span>
+              <span class="can">
+                <span class="filler"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <h3>Code in comments ⬇️</h3>
+    </div>
+  </body>
+</html>
