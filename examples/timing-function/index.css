@@ -1,0 +1,144 @@
+.grid {
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-rows: auto;
+  scale: 0.85;
+}
+
+.frame {
+  translate: 0 4px;
+}
+
+.frame header {
+  top: -30px;
+}
+
+.frame.rows h3 {
+  bottom: -8px;
+}
+
+.grid > div.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0 8px;
+  border-radius: 3px;
+  width: 186px;
+  height: 24px;
+  margin-bottom: 20px;
+}
+
+.code {
+  color: rgb(255 255 255 / 96%);
+  font-size: 9.6px;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.loader {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  -webkit-transition: all 500ms linear;
+  transition: all 500ms linear;
+}
+
+.section-path {
+  position: relative;
+  width: 250px;
+  height: 26px;
+  scale: 0.75;
+  border-radius: 50px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 50px;
+  background: rgb(255 255 255 / 5%);
+  overflow: hidden;
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+.globe {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  margin-top: 3px;
+  margin-left: 3px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #9949ff, #813de4);
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.globe.globe-1 {
+  animation-name: moveBallRight;
+}
+
+.globe.globe-2 {
+  animation-name: moveBallLeft;
+}
+
+@keyframes moveBallRight {
+  0%,
+  25% {
+    translate: 0 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+    translate: 224px 0;
+  }
+  77%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveBallLeft {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  0%,
+  75% {
+    translate: 224px 0;
+  }
+  51%,
+  100% {
+    opacity: 1;
+  }
+  100% {
+    translate: 0;
+  }
+}
+
+.linear .globe {
+  animation-timing-function: linear;
+}
+
+.ease .globe {
+  animation-timing-function: ease;
+}
+
+.ease-in .globe {
+  animation-timing-function: ease-in;
+}
+
+.ease-out .globe {
+  animation-timing-function: ease-out;
+}
+
+.ease-in-out .globe {
+  animation-timing-function: ease-in-out;
+}
+
+.cubic-bezier .globe {
+  animation-timing-function: cubic-bezier(0.9, 0.4, 0.8, 0);
+}
+
+.steps .globe {
+  animation-timing-function: steps(5);
+}
