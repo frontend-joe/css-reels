@@ -1,0 +1,511 @@
+.frame header {
+  top: -60px;
+}
+
+.frame h1 {
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+.checkbox-1 {
+  scale: 0.9;
+  display: grid;
+
+  place-items: center;
+  height: 39.4px;
+  max-height: 39.4px;
+  cursor: pointer;
+}
+
+.checkbox-1 input {
+  display: none;
+}
+
+.checkbox-1 svg {
+  overflow: visible;
+}
+
+.path {
+  fill: none;
+  stroke: rgb(255 255 255 / 10%);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease,
+    stroke 0.5s ease;
+  stroke-dasharray: 241 9999999;
+  stroke-dashoffset: 0;
+}
+
+.checkbox-1 input:checked ~ svg .path {
+  stroke-dasharray: 70.5096664428711 9999999;
+  stroke-dashoffset: -262.2723388671875;
+  stroke: #8f44fd;
+}
+
+/* From Uiverse.io by elijahgummer */
+.checkbox-2 {
+  scale: 1.1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.checkbox-2:hover .checkbox-check {
+  background: #8f44fd25;
+}
+
+.checkbox-2 .checkbox-input {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-2 .checkbox-input:checked + .checkbox-check {
+  background: #8f44fd;
+  stroke-dashoffset: 0;
+}
+
+.checkbox-2 .checkbox-check {
+  border: 1.5px solid rgb(255 255 255 / 10%);
+  stroke: #f9f9f9;
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+  stroke-linecap: round;
+  stroke-width: 2;
+  border-radius: 0.2rem;
+  fill: none;
+  transition: background 0.4s, stroke-dashoffset 0.6s;
+}
+
+/* Hide the default checkbox */
+.checkbox-3 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-3 {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem;
+  user-select: none;
+  scale: 0.9;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  --clr: #8f44fd;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: transparent;
+  border: 1.5px solid rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  transition: 300ms;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-3 input:checked ~ .checkmark {
+  background-color: var(--clr);
+  border-radius: 0.5rem;
+  animation: pulse 500ms ease-in-out;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-3 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-3 .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #e0e0e2;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 #8f44fd90;
+    rotate: 20deg;
+  }
+
+  50% {
+    rotate: -20deg;
+  }
+
+  75% {
+    box-shadow: 0 0 0 10px #8f44fd60;
+  }
+
+  100% {
+    box-shadow: 0 0 0 13px #8f44fd30;
+    rotate: 0;
+  }
+}
+
+/* From Uiverse.io by nikk7007 */
+.checkbox-4 {
+  display: flex;
+  align-items: center;
+  transform: scale(1.17);
+  translate: 0 -1px;
+}
+
+.checkbox-4 input[type="checkbox"] {
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: 5px;
+  display: inline-block;
+  appearance: none;
+  position: relative;
+  background-color: transparent;
+  border: 1.5px solid rgb(255 255 255 / 10%);
+  border-radius: 15%;
+  cursor: pointer;
+  overflow: hidden;
+  background-clip: content-box;
+}
+
+.checkbox-4 input[type="checkbox"]:checked {
+  border-color: #8f44fd;
+}
+
+.checkbox-4 input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  height: 0.9rem;
+  width: 0.4rem;
+  border-bottom: 2px solid rgb(255 255 255 / 96%);
+  border-right: 2px solid rgb(255 255 255 / 96%);
+  opacity: 0;
+  transform: rotate(45deg) translate(-50%, -50%);
+  position: absolute;
+  top: 45%;
+  left: 21%;
+  transition: 0.25s ease;
+}
+
+.checkbox-4 input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  background-color: #8f44fd;
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 0.3s ease;
+}
+
+.checkbox-4 input[type="checkbox"]:checked::before {
+  height: 135%;
+  width: 135%;
+  opacity: 100%;
+}
+
+.checkbox-4 input[type="checkbox"]:checked::after {
+  opacity: 100%;
+}
+
+.checkbox-4 span {
+  font-size: 2rem;
+}
+
+/* From Uiverse.io by Mohamed-Kasme */
+.checkbox-5 {
+  scale: 0.875;
+  translate: 0 1px;
+}
+
+.checkbox-5 .check {
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox-5 .check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgb(33 33 33 / 0%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.checkbox-5 .check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: rgb(255 255 255 / 10%);
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+}
+
+.checkbox-5 .check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+  stroke-width: 0.75px;
+}
+
+.checkbox-5 .check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+  stroke-width: 1px;
+}
+
+.checkbox-5 #mute + .check svg path {
+  transition-property: fill;
+  transition-duration: 0.3s;
+}
+
+.checkbox-5 #mute:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition-property: all;
+  transition: all 0.3s linear;
+}
+
+.checkbox-5 #mute:checked + .check svg polyline {
+  content: "done";
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+  border-color: transparent;
+  stroke: #8f44fd;
+  animation: mute 0.6s ease;
+}
+
+@keyframes mute {
+  from {
+    transform: scale(1, 1);
+  }
+
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.checkbox-wrapper-42 {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  translate: 0 -2px;
+}
+
+.checkbox-wrapper-42 input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox-wrapper-42 label {
+  display: inline-block;
+  scale: 1.7;
+}
+
+.checkbox-wrapper-42 label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #8f44fd;
+  transition: 0.3s;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+}
+
+.checkbox-wrapper-42 .cbx {
+  position: relative;
+  overflow: hidden;
+  top: 1px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 3px;
+  vertical-align: middle;
+  transition: background 0.1s ease;
+  cursor: pointer;
+}
+.checkbox-wrapper-42 .cbx:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 9px;
+  opacity: 0;
+  transform: rotate(45deg) scale(0);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease;
+  transition-delay: 0.15s;
+}
+.checkbox-wrapper-42 .lbl {
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.checkbox-wrapper-42 input[type="checkbox"]:checked ~ .cbx {
+  border-color: #8f44fd;
+  animation: jelly-42 0.6s ease;
+}
+.checkbox-wrapper-42 input[type="checkbox"]:checked ~ .cbx:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+.checkbox-wrapper-42 input[type="checkbox"]:checked ~ .cbx:before {
+  transform: scaleY(1);
+}
+
+.checkbox-wrapper-42 .cntr {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+@-moz-keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@-o-keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+@keyframes jelly-42 {
+  from {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  40% {
+    transform: scale(0.75, 1.25);
+  }
+  50% {
+    transform: scale(1.15, 0.85);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+  75% {
+    transform: scale(1.05, 0.95);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}

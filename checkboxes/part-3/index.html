@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkboxes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <header>
+        <h2>Save These</h2>
+        <h1 style="font-size: 16px">CSS Checkboxes</h1>
+      </header>
+      <div class="grid">
+        <div>
+          <p>1</p>
+          <label class="checkbox-1">
+            <input type="checkbox" />
+            <svg viewBox="0 0 64 64" height="2em" width="2em">
+              <path
+                d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                pathLength="575.0541381835938"
+                class="path"
+              ></path>
+            </svg>
+          </label>
+        </div>
+        <div>
+          <p>2</p>
+          <label class="checkbox-2">
+            <input class="checkbox-input" type="checkbox" />
+            <svg class="checkbox-check" width="24" height="24">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </label>
+        </div>
+        <div>
+          <p>3</p>
+          <label class="checkbox-3">
+            <input checked="checked" type="checkbox" />
+            <div class="checkmark"></div>
+          </label>
+        </div>
+        <div>
+          <p>4</p>
+          <label class="checkbox-4">
+            <input type="checkbox" checked="" />
+            <span></span>
+          </label>
+        </div>
+        <div>
+          <p>5</p>
+          <div class="checkbox-wrapper-42">
+            <input id="cbx-42" type="checkbox" />
+            <label class="cbx" for="cbx-42"></label>
+          </div>
+        </div>
+        <div>
+          <p>6</p>
+          <div class="checkbox-5">
+            <input style="display: none" id="mute" type="checkbox" />
+            <label class="check" for="mute">
+              <svg viewBox="0 0 18 18" height="40px" width="40px">
+                <path
+                  d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"
+                ></path>
+                <polyline points="1 9 7 14 15 4"></polyline>
+              </svg>
+            </label>
+          </div>
+        </div>
+      </div>
+      <h3>Code in comments ⬇️</h3>
+    </div>
+  </body>
+</html>
