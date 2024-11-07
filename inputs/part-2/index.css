@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  margin-top: -10px;
+  grid-template-columns: 1fr;
+}
+
+.grid > div {
+  height: 44px;
+  width: 130px;
+}
+
+.frame {
+  translate: 0 10px;
+  scale: 1.5;
+}
+
+.frame header {
+  top: -60px;
+  width: 300px;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.grid > div > p {
+  left: -16px;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.frame h3 {
+  bottom: -32px;
+  white-space: nowrap;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* input-1 */
+
+.input-1 {
+  position: relative;
+  width: 100%;
+}
+
+.input-1 input {
+  height: 32px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 0;
+  outline: none;
+  padding-left: 16px;
+  width: 100%;
+  font-size: 9px;
+  font-family: inherit;
+  color: rgb(255 255 255 / 96%);
+  transition: 0.3s;
+}
+
+.input-1 .underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #8f44fd;
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  transition: 0.5s;
+}
+
+.input-1 input:focus ~ .underline {
+  transform: scaleX(1);
+}
+
+.input-1 input:focus ~ span {
+  color: #8f44fd;
+}
+
+.input-1 input:invalid,
+.input-1 input:invalid ~ span {
+  animation: shake 0.125s 4 both;
+}
+
+.input-1 span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+/* input-2 */
+
+.input-2 {
+  position: relative;
+  width: 100%;
+}
+
+.input-2 input {
+  height: 28px;
+  background: transparent;
+  border: 1px solid #373538;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 8px;
+  width: 100%;
+  font-size: 9px;
+  font-family: inherit;
+  color: rgb(255 255 255 / 96%);
+  transition: 0.3s;
+}
+
+.input-2 input:focus {
+  border-color: #8f44fd;
+}
+
+.input-2 input:focus ~ button {
+  background: #8f44fd;
+}
+
+.input-2 button {
+  position: absolute;
+  border: 0;
+  height: 100%;
+  width: 28px;
+  background: #373538;
+  color: rgb(255 255 255 / 96%);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  right: 0;
+  translate: 0 -50%;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-2 button .material-symbols-outlined {
+  font-size: 15px;
+}
+
+.input-2 .icon.hidden {
+  opacity: 0;
+}
+
+.input-2 .spinner {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1.75px solid rgb(255 255 255 / 20%);
+  border-top-color: rgb(255 255 255 / 96%);
+  animation: spin 0.75s infinite linear;
+}
+
+.input-2 .spinner.visible {
+  opacity: 1;
+}
+
+.input-2 > span {
+  font-size: 13px;
+}
+
+@keyframes spin {
+  100% {
+    rotate: 1turn;
+  }
+}
+
+/* input-3 */
+
+.input-3 {
+  position: relative;
+  width: 100%;
+}
+
+.input-3 input {
+  height: 28px;
+  background: transparent;
+  border: 1px solid #373538;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 24px;
+  width: 100%;
+  font-size: 9px;
+  font-family: inherit;
+  color: rgb(255 255 255 / 96%);
+  transition: 0.3s;
+}
+
+.input-3 input:focus {
+  border-color: #8f44fd;
+}
+
+.input-3 input:focus ~ span {
+  color: #8f44fd;
+}
+
+.input-3 span {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  translate: 0 -50%;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.input-3 button {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  height: 100%;
+  width: 28px;
+  opacity: 0;
+  color: rgb(255 255 255 / 96%);
+  cursor: pointer;
+}
+
+.input-3 button.visible {
+  opacity: 1;
+}
+
+@keyframes shake {
+  25% {
+    margin-left: -3px;
+  }
+  75% {
+    margin-left: 3px;
+  }
+}
+
+/* input-4 */
+
+.input-4 {
+  position: relative;
+  width: 100%;
+}
+
+.input-4 input {
+  height: 28px;
+  background: transparent;
+  border: 1px solid #373538;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 8px;
+  width: 100%;
+  font-size: 9px;
+  font-family: inherit;
+  color: rgb(255 255 255 / 96%);
+  transition: 0.3s;
+}
+
+.input-4 input:focus {
+  border-color: #8f44fd;
+}
+
+.input-4 input:focus ~ span {
+  color: #8f44fd;
+}
+
+.input-4 :is(label, span) {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.input-4 label {
+  left: 4px;
+  font-size: 9px;
+  padding: 0 4px;
+  pointer-events: none;
+  color: rgb(255 255 255 / 50%);
+  background: #141315;
+  transition: 0.3s;
+}
+
+.input-4 input:is(:valid, :focus) ~ label {
+  scale: 0.8;
+  translate: -5px -20px;
+  color: rgb(255 255 255 / 60%);
+}
+
+.input-4 span {
+  right: 6px;
+  font-size: 15px;
+  transition: 0.3s;
+}

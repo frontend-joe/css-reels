@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  margin-top: -10px;
+  grid-template-columns: 1fr;
+}
+
+.grid > div {
+  height: 69px;
+  width: 130px;
+}
+
+.frame {
+  translate: 0 10px;
+  scale: 1.5;
+}
+
+.frame header {
+  top: -60px;
+  width: 300px;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.grid > div > p {
+  left: -16px;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.frame h3 {
+  bottom: -32px;
+  white-space: nowrap;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* tooltip-1 */
+
+.tooltip-1 {
+  position: absolute;
+  scale: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+.tooltip-1 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.tooltip-1 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.tooltip-1 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -42px;
+}
+.tooltip-1 .icon-content .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #ababab;
+  background-color: rgb(255 255 255 / 6%);
+  transition: all 0.3s ease-in-out;
+}
+.tooltip-1 .icon-content .link:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.tooltip-1 .icon-content .link svg {
+  width: 30px;
+  height: 30px;
+}
+.tooltip-1 .icon-content .link[data-social="spotify"]:hover {
+  color: #1db954;
+}
+.tooltip-1 .icon-content .link[data-social="pinterest"]:hover {
+  color: #c42b3d;
+}
+.tooltip-1 .icon-content .link[data-social="dribbble"]:hover {
+  color: #ea4c89;
+}
+.tooltip-1 .icon-content .link[data-social="telegram"]:hover {
+  color: #0088cc;
+}
+
+/* tooltip-2 */
+
+.tooltip-2 {
+  position: absolute;
+  scale: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.tooltip-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.tooltip-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.tooltip-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.tooltip-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  color: #ababab;
+  background-color: rgb(255 255 255 / 6%);
+  transition: all 0.3s ease-in-out;
+}
+.tooltip-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 50%);
+}
+.tooltip-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.tooltip-2 .icon-content a:hover {
+  color: white;
+}
+.tooltip-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.tooltip-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+.tooltip-2 .icon-content a[data-social="spotify"] .filled,
+.tooltip-2 .icon-content a[data-social="spotify"] ~ .tooltip {
+  background-color: #1db954;
+}
+.tooltip-2 .icon-content a[data-social="pinterest"] .filled,
+.tooltip-2 .icon-content a[data-social="pinterest"] ~ .tooltip {
+  background-color: #c42b3d;
+}
+.tooltip-2 .icon-content a[data-social="dribbble"] .filled,
+.tooltip-2 .icon-content a[data-social="dribbble"] ~ .tooltip {
+  background-color: #ea4c89;
+}
+.tooltip-2 .icon-content a[data-social="telegram"] .filled,
+.tooltip-2 .icon-content a[data-social="telegram"] ~ .tooltip {
+  background-color: #0088cc;
+}
+
+/* tooltip-3 */
+
+.tooltip-3 li::after {
+  content: "";
+  display: block;
+  height: 0px;
+  transition: height 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.tooltip-3 li:hover::after {
+  height: 10px;
+}
+
+.tooltip-3 {
+  position: absolute;
+  scale: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+.tooltip-3 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.tooltip-3 .icon-content .tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.tooltip-3 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  bottom: -40px;
+}
+.tooltip-3 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #ababab;
+  background-color: rgb(255 255 255 / 6%);
+  transition: all 0.3s ease-in-out;
+}
+.tooltip-3 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.tooltip-3 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.tooltip-3 .icon-content a:hover {
+  color: white;
+}
+.tooltip-3 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.tooltip-3 .icon-content a:hover .filled {
+  height: 100%;
+}
+.tooltip-3 .icon-content a[data-social="spotify"] .filled,
+.tooltip-3 .icon-content a[data-social="spotify"] ~ .tooltip {
+  background-color: #1db954;
+}
+.tooltip-3 .icon-content a[data-social="pinterest"] .filled,
+.tooltip-3 .icon-content a[data-social="pinterest"] ~ .tooltip {
+  background-color: #c42b3d;
+}
+.tooltip-3 .icon-content a[data-social="dribbble"] .filled,
+.tooltip-3 .icon-content a[data-social="dribbble"] ~ .tooltip {
+  background-color: #ea4c89;
+}
+.tooltip-3 .icon-content a[data-social="telegram"] .filled,
+.tooltip-3 .icon-content a[data-social="telegram"] ~ .tooltip {
+  background-color: #0088cc;
+}

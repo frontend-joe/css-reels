@@ -100,6 +100,20 @@ body {
   opacity: 0;
 }
 
+.grid > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  translate: -1px 0;
+  background: rgb(255 255 255 / 10%);
+  pointer-events: none;
+  opacity: 0;
+}
+
 .grid.grid.two-col > div {
   width: 96px;
 }

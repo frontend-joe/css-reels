@@ -1,0 +1,343 @@
+.grid > div {
+  width: 56px;
+}
+
+.loader-1 {
+  --uib-size: 40px;
+  --uib-color: #f9f9f9;
+  --uib-speed: 1s;
+  --uib-stroke: 3px;
+  position: absolute;
+  scale: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.loader-1 .line {
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--uib-stroke) / 2);
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  width: var(--uib-stroke);
+}
+
+.loader-1 .line::before {
+  content: "";
+  height: 22%;
+  width: 100%;
+  border-radius: calc(var(--uib-stroke) / 2);
+  background-color: var(--uib-color);
+  animation: pulse calc(var(--uib-speed)) ease-in-out infinite;
+  transition: background-color 0.3s ease;
+  transform-origin: center bottom;
+}
+
+.loader-1 .line:nth-child(1) {
+  transform: rotate(calc(360deg / -12 * 1));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 1);
+  }
+}
+.loader-1 .line:nth-child(2) {
+  transform: rotate(calc(360deg / -12 * 2));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 2);
+  }
+}
+.loader-1 .line:nth-child(3) {
+  transform: rotate(calc(360deg / -12 * 3));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 3);
+  }
+}
+.loader-1 .line:nth-child(4) {
+  transform: rotate(calc(360deg / -12 * 4));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 4);
+  }
+}
+.loader-1 .line:nth-child(5) {
+  transform: rotate(calc(360deg / -12 * 5));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 5);
+  }
+}
+.loader-1 .line:nth-child(6) {
+  transform: rotate(calc(360deg / -12 * 6));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 6);
+  }
+}
+.loader-1 .line:nth-child(7) {
+  transform: rotate(calc(360deg / -12 * 7));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 7);
+  }
+}
+.loader-1 .line:nth-child(8) {
+  transform: rotate(calc(360deg / -12 * 8));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 8);
+  }
+}
+.loader-1 .line:nth-child(9) {
+  transform: rotate(calc(360deg / -12 * 9));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 9);
+  }
+}
+.loader-1 .line:nth-child(10) {
+  transform: rotate(calc(360deg / -12 * 10));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 10);
+  }
+}
+.loader-1 .line:nth-child(11) {
+  transform: rotate(calc(360deg / -12 * 11));
+
+  &::before {
+    animation-delay: calc(var(--uib-speed) / -12 * 11);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  80%,
+  100% {
+    transform: scaleY(0.75);
+    opacity: 0;
+  }
+  20% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.loader-2 {
+  position: absolute;
+  scale: 0.85;
+  --uib-size: 45px;
+  --uib-color: #8f44fd;
+  --uib-speed: 2s;
+}
+
+.loader-2 svg {
+  height: 31.25px;
+  width: 50px;
+  transform-origin: center;
+  overflow: visible;
+}
+
+.loader-2 .car {
+  stroke: var(--uib-color);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: travel-2 var(--uib-speed) ease-in-out infinite,
+    fade var(--uib-speed) ease-out infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.loader-2 .track {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: rgb(255 255 255 / 8%);
+}
+
+@keyframes travel-2 {
+  0% {
+    stroke-dashoffset: 100;
+  }
+
+  75% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  20%,
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.loader-3 {
+  width: 48px;
+  height: 48px;
+  scale: 0.6;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #8f44fd #0000 #f9f9f9 #0000;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: 1s rotate-3 linear infinite;
+}
+.loader-3:before,
+.loader-3:after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom-color: #f9f9f9;
+  transform: translate(-10px, 19px) rotate(-35deg);
+}
+.loader-3:after {
+  border-color: #8f44fd #0000 #0000 #0000;
+  transform: translate(32px, 3px) rotate(-35deg);
+}
+@keyframes rotate-3 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-4 {
+  scale: 0.85;
+  translate: 0 2px;
+}
+
+.loader-4 svg {
+  --uib-size: 37px;
+  --uib-color: #8f44fd;
+  --uib-speed: 1s;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  transform-origin: center;
+  overflow: visible;
+}
+
+.loader-4 .car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 15, 85;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: travel-4 var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.loader-4 .track {
+  stroke: rgb(255 255 255 / 8%);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes travel-4 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+.loader-5 {
+  position: absolute;
+  translate: 2.5px 4px;
+}
+
+.loader-5 svg {
+  --uib-size: 55px;
+  --uib-color: #f9f9f9;
+  --uib-speed: 1.5s;
+  height: calc(var(--uib-size) * (2.1 / 5));
+  width: var(--uib-size);
+  transform-origin: center;
+  overflow: visible;
+}
+
+.loader-5 .car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 15, 85;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: travel-5 var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.loader-5 .track {
+  stroke: rgb(255 255 255 / 8%);
+}
+
+@keyframes travel-5 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+.loader-6 {
+  position: absolute;
+  scale: 0.85;
+}
+
+.loader-6 .container {
+  --uib-size: 35px;
+  --uib-color: black;
+  --uib-speed: 1.25s;
+  --uib-bg-opacity: 0.1;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  transform-origin: center;
+  will-change: transform;
+  overflow: visible;
+}
+
+.loader-6 .car {
+  fill: none;
+  stroke: #8f44fd;
+  stroke-dasharray: 25, 75;
+  stroke-dashoffset: 0;
+  animation: travel var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.loader-6 .track {
+  fill: none;
+  stroke: rgb(255 255 255 / 8%);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes travel {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
