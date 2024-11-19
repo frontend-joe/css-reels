@@ -1,0 +1,419 @@
+.grid > div {
+  width: 54px;
+}
+
+.loader-1 {
+  position: absolute;
+  scale: 0.775;
+  --uib-size: 40px;
+  --uib-color: #8f44fd;
+  --uib-speed: 1.5s;
+  --uib-bg-opacity: 0.1;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  transform-origin: center;
+  overflow: visible;
+}
+
+.loader-1 .car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 15, 85;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: travel var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.loader-1 .track {
+  stroke: rgba(255, 255, 255, 0.12);
+  transition: stroke 0.5s ease;
+}
+
+@keyframes travel {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+.loader-2 {
+  width: 60px;
+  height: 40px;
+  position: absolute;
+  scale: 0.65;
+  display: inline-block;
+  --base-color: #141315; /*use your base color*/
+}
+.loader-2::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #c5c5c8;
+  background-image: radial-gradient(
+      circle 8px at 18px 18px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 18px 0px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 0px 18px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 36px 18px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 18px 36px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 30px 5px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 30px 5px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 30px 30px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 5px 30px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 4px at 5px 5px,
+      var(--base-color) 100%,
+      transparent 0
+    );
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 2s linear infinite;
+}
+.loader-2::after {
+  content: "";
+  left: 35px;
+  top: 15px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #555556;
+  background-image: radial-gradient(
+      circle 5px at 12px 12px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 12px 0px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 0px 12px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 24px 12px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 12px 24px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 20px 3px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 20px 3px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 20px 20px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 3px 20px,
+      var(--base-color) 100%,
+      transparent 0
+    ),
+    radial-gradient(
+      circle 2.5px at 3px 3px,
+      var(--base-color) 100%,
+      transparent 0
+    );
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  animation: rotationBack 2s linear infinite reverse;
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.loader-3 {
+  position: absolute;
+  scale: 0.625;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: #8f44fd;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+  }
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+.loader-4 {
+  position: absolute;
+  scale: 0.325;
+  width: 89.6px;
+  height: 89.6px;
+  border-radius: 50%;
+  border: 5.5px solid rgb(255 255 255 / 28%);
+  box-sizing: content-box;
+}
+
+.loader-4:before {
+  content: "";
+  position: absolute;
+  width: 4.5px;
+  height: 38.1px;
+  top: 9px;
+  left: 42.6px;
+  background: #c5c5c8;
+  border-radius: 2.2px;
+  transform-origin: 2.25px 37px;
+  animation: progress-t59zy9 2s linear infinite;
+}
+
+.loader-4:after {
+  content: "";
+  position: absolute;
+  width: 4.5px;
+  height: 24.6px;
+  top: 22.4px;
+  left: 42.6px;
+  background: #c5c5c8;
+  border-radius: 2.2px;
+  transform-origin: 2.25px 23.5px;
+  animation: progress-t59zy9 12s linear infinite;
+}
+
+@keyframes progress-t59zy9 {
+  0% {
+    tranform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-5 {
+  position: absolute;
+  scale: 0.475;
+}
+.loader-5 div {
+  height: 20px;
+  position: absolute;
+  width: 20px;
+}
+.loader-5 div:after {
+  -webkit-animation: loading-5 2.1s ease infinite backwards;
+  animation: loading-5 2.1s ease infinite backwards;
+  background: linear-gradient(135deg, #8f44fd, #c244fd);
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.loader-5 div:nth-child(1) {
+  -webkit-transform: translate(-50%, -50%) translate(60%, 120%);
+  transform: translate(-50%, -50%) translate(60%, 120%);
+}
+.loader-5 div:nth-child(2) {
+  -webkit-transform: translate(-50%, -50%) translate(-60%, 120%);
+  transform: translate(-50%, -50%) translate(-60%, 120%);
+}
+.loader-5 div:nth-child(3) {
+  -webkit-transform: translate(-50%, -50%) translate(120%, 0);
+  transform: translate(-50%, -50%) translate(120%, 0);
+}
+.loader-5 div:nth-child(4) {
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.loader-5 div:nth-child(5) {
+  -webkit-transform: translate(-50%, -50%) translate(-120%, 0);
+  transform: translate(-50%, -50%) translate(-120%, 0);
+}
+.loader-5 div:nth-child(6) {
+  -webkit-transform: translate(-50%, -50%) translate(60%, -120%);
+  transform: translate(-50%, -50%) translate(60%, -120%);
+}
+.loader-5 div:nth-child(7) {
+  -webkit-transform: translate(-50%, -50%) translate(-60%, -120%);
+  transform: translate(-50%, -50%) translate(-60%, -120%);
+}
+.loader-5 div:nth-child(1):after {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+.loader-5 div:nth-child(2):after {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.loader-5 div:nth-child(3):after {
+  -webkit-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
+.loader-5 div:nth-child(4):after {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.loader-5 div:nth-child(5):after {
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+.loader-5 div:nth-child(6):after {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+.loader-5 div:nth-child(7):after {
+  -webkit-animation-delay: 1.05s;
+  animation-delay: 1.05s;
+}
+
+@-webkit-keyframes loading-5 {
+  0%,
+  20% {
+    opacity: 0;
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+  30%,
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  90%,
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(300%);
+    transform: translateY(300%);
+  }
+}
+@keyframes loading-5 {
+  0%,
+  20% {
+    opacity: 0;
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+  30%,
+  70% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  90%,
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(300%);
+    transform: translateY(300%);
+  }
+}
+
+.loader-6 {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgb(255 255 255 / 28%);
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  scale: 0.6;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader-6::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #c5c5c8;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
