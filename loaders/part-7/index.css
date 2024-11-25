@@ -1,0 +1,326 @@
+.grid > div {
+  width: 54px;
+}
+
+/* loader-1 */
+
+.loader-1 {
+  position: absolute;
+  scale: 0.9;
+}
+
+.loader-1 .container {
+  --uib-size: 40px;
+  --uib-color: #8f44fd;
+  --uib-speed: 0.8s;
+  --uib-bg-opacity: 0.1;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  transform-origin: center;
+  animation: rotate-1 var(--uib-speed) linear infinite;
+  will-change: transform;
+  overflow: visible;
+}
+
+.loader-1 .car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 25, 65;
+  stroke-width: 3px;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  transition: stroke 0.5s ease;
+}
+
+.loader-1 .track {
+  fill: none;
+  stroke: rgb(255 255 255 / 10%);
+  stroke-width: 3px;
+  transition: stroke 0.5s ease;
+}
+
+@keyframes rotate-1 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-250%);
+    transform: translateY(-250%);
+  }
+  30%,
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(250%);
+    transform: translateY(250%);
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader-2 {
+  width: 85px;
+  height: 50px;
+  --g1: conic-gradient(from 90deg at left 3px top 3px, #0000 90deg, #a4a0a7 0);
+  --g2: conic-gradient(
+    from -90deg at bottom 3px right 3px,
+    #0000 90deg,
+    #a4a0a7 0
+  );
+  background: var(--g1), var(--g1), var(--g1), var(--g2), var(--g2), var(--g2);
+  background-position: left, center, right;
+  background-repeat: no-repeat;
+  position: absolute;
+  scale: 0.4;
+  animation: l9 1s infinite;
+}
+@keyframes l9 {
+  0% {
+    background-size: 25px 50%, 25px 50%, 25px 50%;
+  }
+  25% {
+    background-size: 25px 100%, 25px 50%, 25px 50%;
+  }
+  50% {
+    background-size: 25px 50%, 25px 100%, 25px 50%;
+  }
+  75% {
+    background-size: 25px 50%, 25px 50%, 25px 100%;
+  }
+  100% {
+    background-size: 25px 50%, 25px 50%, 25px 50%;
+  }
+}
+
+.loader-5 {
+  height: 20px;
+  position: absolute;
+  scale: 0.45;
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-gap: 7px;
+  --primary: #8f44fd;
+}
+.loader-5 div {
+  background: var(--primary);
+}
+.loader-5 div:nth-child(1) {
+  -webkit-animation: loader-2 1.5s 0.15s ease infinite backwards;
+  animation: loader-2 1.25s 0.15s ease infinite backwards;
+}
+.loader-5 div:nth-child(2) {
+  -webkit-animation: loader-2 1.5s 0.3s ease infinite backwards;
+  animation: loader-2 1.25s 0.3s ease infinite backwards;
+}
+.loader-5 div:nth-child(3) {
+  -webkit-animation: loader-2 1.5s 0.45s ease infinite backwards;
+  animation: loader-2 1.25s 0.45s ease infinite backwards;
+}
+
+.loader-4 {
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: absolute;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.1s infinite ease;
+  scale: 0.55;
+  transform: translateZ(0);
+}
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #ffffff,
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7),
+      1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff,
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff,
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.5),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff,
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff,
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.5),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff,
+      -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
+      1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
+      0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
+      -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
+      -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
+
+.loader-3 {
+  position: absolute;
+  scale: 0.7;
+  animation: rotate 2.5s infinite;
+  height: 50px;
+  width: 50px;
+}
+.loader-3:before,
+.loader-3:after {
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.loader-3:before {
+  animation: box1 2.5s infinite;
+  background-color: rgb(255 255 255 / 20%);
+  box-shadow: 30px 0 0 #8f44fd;
+  margin-bottom: 10px;
+}
+.loader-3:after {
+  animation: box2 2.5s infinite;
+  background-color: #8f44fd;
+  box-shadow: 30px 0 0 rgb(255 255 255 / 20%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes box1 {
+  0% {
+    box-shadow: 30px 0 0 #8f44fd;
+  }
+  50% {
+    box-shadow: 0 0 0 #8f44fd;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #8f44fd;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes box2 {
+  0% {
+    box-shadow: 30px 0 0 rgb(255 255 255 / 20%);
+  }
+  50% {
+    box-shadow: 0 0 0 rgb(255 255 255 / 20%);
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 rgb(255 255 255 / 20%);
+    margin-top: 0;
+  }
+}
+
+.loader-6 {
+  position: absolute;
+  scale: 0.775;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(farthest-side, #0000 40%, #fff 41%);
+  background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 1) 0
+      )
+      center/2.5px 100%,
+    linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.75) 0
+      )
+      center/100% 2.5px;
+  background-repeat: no-repeat;
+  animation: spinner-d3o0rx 1s infinite steps(12);
+}
+
+.loader-6::before,
+.loader-6::after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.915;
+  transform: rotate(30deg);
+}
+
+.loader-6::after {
+  opacity: 0.83;
+  transform: rotate(60deg);
+}
+
+@keyframes spinner-d3o0rx {
+  100% {
+    transform: rotate(1turn);
+  }
+}
