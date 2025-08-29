@@ -1,0 +1,508 @@
+.grid {
+  gap: 0 8px;
+}
+
+.grid > div {
+  width: 56px;
+}
+
+h3 {
+  font-size: 13px !important;
+  translate: 0 16px;
+}
+
+/* From Uiverse.io by KSAplay */
+.loader-1 {
+  scale: 0.35;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-1::before,
+.loader-1::after {
+  position: absolute;
+  content: "";
+  height: 8em;
+  width: 8em;
+  border: 1em solid #f9f9f9;
+  border-radius: 50%;
+  animation: loader_79178 2s linear infinite;
+}
+
+.loader-1::after {
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+@keyframes loader_79178 {
+  0% {
+    border: 1em solid #f9f9f9;
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    border: 0 solid #f9f9f9;
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.loader-3 {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  scale: 0.5;
+  top: 48px;
+}
+
+.loader-3 div {
+  position: absolute;
+  width: 50%;
+  height: 150%;
+  background: #cecece;
+  transform: rotate(calc(var(--rotation) * 1deg))
+    translate(0, calc(var(--translation) * 1%));
+  animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+}
+
+.loader-3 div:nth-child(1) {
+  --delay: 0.1;
+  --rotation: 36;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(2) {
+  --delay: 0.2;
+  --rotation: 72;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(3) {
+  --delay: 0.3;
+  --rotation: 108;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(4) {
+  --delay: 0.4;
+  --rotation: 144;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(5) {
+  --delay: 0.5;
+  --rotation: 180;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(6) {
+  --delay: 0.6;
+  --rotation: 216;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(7) {
+  --delay: 0.7;
+  --rotation: 252;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(8) {
+  --delay: 0.8;
+  --rotation: 288;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(9) {
+  --delay: 0.9;
+  --rotation: 324;
+  --translation: 150;
+}
+
+.loader-3 div:nth-child(10) {
+  --delay: 1;
+  --rotation: 360;
+  --translation: 150;
+}
+
+@keyframes spinner-fzua35 {
+  0%,
+  10%,
+  20%,
+  30%,
+  50%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--rotation) * 1deg))
+      translate(0, calc(var(--translation) * 1%));
+  }
+
+  50% {
+    transform: rotate(calc(var(--rotation) * 1deg))
+      translate(0, calc(var(--translation) * 1.5%));
+  }
+}
+
+.loader-4 {
+  --size: 32px;
+  --duration: 800ms;
+  height: calc(var(--size) * 2);
+  width: calc(var(--size) * 3);
+  position: absolute;
+  scale: 0.425;
+  translate: 0 24px;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  margin-top: calc(var(--size) * 1.5 * -1);
+  transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+}
+
+.loader-4 .box {
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.loader-4 .box:nth-child(1) {
+  transform: translate(100%, 0);
+  -webkit-animation: box1 var(--duration) linear infinite;
+  animation: box1 var(--duration) linear infinite;
+}
+
+.loader-4 .box:nth-child(2) {
+  transform: translate(0, 100%);
+  -webkit-animation: box2 var(--duration) linear infinite;
+  animation: box2 var(--duration) linear infinite;
+}
+
+.loader-4 .box:nth-child(3) {
+  transform: translate(100%, 100%);
+  -webkit-animation: box3 var(--duration) linear infinite;
+  animation: box3 var(--duration) linear infinite;
+}
+
+.loader-4 .box:nth-child(4) {
+  transform: translate(200%, 0);
+  -webkit-animation: box4 var(--duration) linear infinite;
+  animation: box4 var(--duration) linear infinite;
+}
+
+.loader-4 .box > div {
+  --background: #f9f9f9;
+  --top: auto;
+  --right: auto;
+  --bottom: auto;
+  --left: auto;
+  --translateZ: calc(var(--size) / 2);
+  --rotateY: 0deg;
+  --rotateX: 0deg;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  top: var(--top);
+  right: var(--right);
+  bottom: var(--bottom);
+  left: var(--left);
+  transform: rotateY(var(--rotateY)) rotateX(var(--rotateX))
+    translateZ(var(--translateZ));
+}
+
+.loader-4 .box > div:nth-child(1) {
+  --top: 0;
+  --left: 0;
+}
+
+.loader-4 .box > div:nth-child(2) {
+  --background: #888888;
+  --right: 0;
+  --rotateY: 90deg;
+}
+
+.loader-4 .box > div:nth-child(3) {
+  --background: #888888;
+  --rotateX: -90deg;
+}
+
+.loader-4 .box > div:nth-child(4) {
+  --background: #222;
+  --top: 0;
+  --left: 0;
+  --translateZ: calc(var(--size) * 3 * -1);
+}
+
+@-webkit-keyframes box1 {
+  0%,
+  50% {
+    transform: translate(100%, 0);
+  }
+
+  100% {
+    transform: translate(200%, 0);
+  }
+}
+
+@keyframes box1 {
+  0%,
+  50% {
+    transform: translate(100%, 0);
+  }
+
+  100% {
+    transform: translate(200%, 0);
+  }
+}
+
+@-webkit-keyframes box2 {
+  0% {
+    transform: translate(0, 100%);
+  }
+
+  50% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+@keyframes box2 {
+  0% {
+    transform: translate(0, 100%);
+  }
+
+  50% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+@-webkit-keyframes box3 {
+  0%,
+  50% {
+    transform: translate(100%, 100%);
+  }
+
+  100% {
+    transform: translate(0, 100%);
+  }
+}
+
+@keyframes box3 {
+  0%,
+  50% {
+    transform: translate(100%, 100%);
+  }
+
+  100% {
+    transform: translate(0, 100%);
+  }
+}
+
+@-webkit-keyframes box4 {
+  0% {
+    transform: translate(200%, 0);
+  }
+
+  50% {
+    transform: translate(200%, 100%);
+  }
+
+  100% {
+    transform: translate(100%, 100%);
+  }
+}
+
+@keyframes box4 {
+  0% {
+    transform: translate(200%, 0);
+  }
+
+  50% {
+    transform: translate(200%, 100%);
+  }
+
+  100% {
+    transform: translate(100%, 100%);
+  }
+}
+
+.loader-2 {
+  position: absolute;
+  translate: 2.5px 4px;
+}
+
+.loader-2 svg {
+  --uib-size: 55px;
+  --uib-color: #8f44fd;
+  --uib-speed: 1.5s;
+  height: calc(var(--uib-size) * (2.1 / 5));
+  width: var(--uib-size);
+  transform-origin: center;
+  overflow: visible;
+}
+
+.loader-2 .car {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 15, 85;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: travel-5 var(--uib-speed) linear infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.loader-2 .track {
+  stroke: rgb(255 255 255 / 8%);
+}
+
+@keyframes travel-5 {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+/* From Uiverse.io by gharsh11032000 */
+.loader-5 {
+  position: absolute;
+  scale: 0.375;
+  width: 5em;
+  height: 5em;
+  background: linear-gradient(-45deg, #8f44fd 0%, #4e00de 100%);
+  animation: spin 2s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(-360deg);
+    border-radius: 50%;
+  }
+
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
+/* From Uiverse.io by RiccardoRapelli */
+
+.loader-6 {
+  position: absolute;
+  translate: 0 4px;
+  scale: 0.275;
+}
+
+.loading-content {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  animation: rotate 2s ease-in-out infinite;
+  filter: url("#gooey");
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.loading-content .liquid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(-45deg, #8f44fd 0%, #4e00de 100%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  --ani_dur: 2s;
+}
+.loading-content .liquid:nth-child(1) {
+  top: 0;
+  animation: animate1 var(--ani_dur) ease-in-out infinite;
+}
+.loading-content .liquid:nth-child(2) {
+  left: 0;
+  animation: animate2 var(--ani_dur) ease-in-out infinite;
+}
+.loading-content .liquid:nth-child(3) {
+  left: 100%;
+  animation: animate3 var(--ani_dur) ease-in-out infinite;
+}
+.loading-content .liquid:nth-child(4) {
+  top: 100%;
+  animation: animate4 var(--ani_dur) ease-in-out infinite;
+}
+@keyframes animate1 {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+@keyframes animate2 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes animate3 {
+  0% {
+    left: 100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes animate4 {
+  0% {
+    top: 100%;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+.svg {
+  width: 0;
+  height: 0;
+}
