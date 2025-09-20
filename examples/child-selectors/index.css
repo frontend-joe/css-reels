@@ -23,12 +23,12 @@
   margin: 0 56px;
   padding: 0 8px;
   border-radius: 3px;
-  width: 186px;
+  width: 190px;
   height: 32px;
 }
 
 .grid > div.row:hover {
-  background: rgb(255 255 255 / 9%);
+  background: rgb(255 255 255 / 5%);
 }
 
 .grid > div.row:hover {
@@ -48,45 +48,37 @@
 
 .blocks {
   display: flex;
-  gap: 4px;
+  gap: 3px;
 }
 
 .blocks > div {
+  position: relative;
+  overflow: hidden;
   width: 14px;
   height: 14px;
-  border-radius: 12px;
-  background: rgb(255 255 255 / 14%);
+  border-radius: 3px;
+  background: rgb(255 255 255 / 7%);
   transition: 0.3s;
 }
 
-.row.first-child:hover > .blocks div:first-child {
+.blocks > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: #8f44fd;
+  transition: 0.375s ease;
+  opacity: 0;
+  translate: 0 calc(100% + 2px);
 }
 
-.row.last-child:hover > .blocks div:last-child {
-  background: #8f44fd;
-}
-
-.row.nth-child:hover > .blocks div:nth-child(2) {
-  background: #8f44fd;
-}
-
-.row.nth-last-child:hover > .blocks div:nth-last-child(3) {
-  background: #8f44fd;
-}
-
-.row.nth-child-odd:hover > .blocks div:nth-child(odd) {
-  background: #8f44fd;
-}
-
-.row.nth-child-even:hover > .blocks div:nth-child(even) {
-  background: #8f44fd;
-}
-
-.row.nth-child-3n:hover > .blocks div:nth-child(3n) {
-  background: #8f44fd;
-}
-
-.row.nth-child-n3:hover > .blocks div:nth-child(n + 3) {
-  background: #8f44fd;
+.row.first-child:hover > .blocks div:first-child::after,
+.row.last-child:hover > .blocks div:last-child::after,
+.row.nth-child:hover > .blocks div:nth-child(2)::after,
+.row.nth-last-child:hover > .blocks div:nth-last-child(3)::after,
+.row.nth-child-odd:hover > .blocks div:nth-child(odd)::after,
+.row.nth-child-even:hover > .blocks div:nth-child(even)::after,
+.row.nth-child-3n:hover > .blocks div:nth-child(3n)::after,
+.row.nth-child-n3:hover > .blocks div:nth-child(n + 3)::after {
+  translate: 0;
+  opacity: 1;
 }
